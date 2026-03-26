@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vizualizacija Netflix podataka">
+    <meta name="author" content="Tamara">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Netflix - Statistika</title>
+</head>
+<body>
+    <header role="banner">
+        <div class="header-container">
+            <h1><span class="accent">NET</span>FLIX <small>| Statistika</small></h1>
+            
+            <div class="menu-wrapper">
+                <label class="menu-btn">MENU ☰</label>
+                <nav role="navigation" aria-label="Glavni izbornik">
+                    <ul>
+                        <li><a href="index_predlozak.html">Početna</a></li>
+                        <li><a href="grafikon.html" class="active">Grafikon</a></li>
+                        <li><a href="slike.html">Galerija</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="analysis-section">
+            <h2>Analiza sadržaja: Movies vs TV Shows</h2>
+            <p>Vizualni prikaz omjera filmova i serija u bazi podataka.</p>
+
+            <div class="chart-container">
+                <div class="bar-group">
+                    <div class="bar movie-bar" style="--height: 70%; height: 70%;" data-value="6131 Movies (70%)"></div>
+                    <span>Movies</span>
+                </div>
+                <div class="bar-group">
+                    <div class="bar tv-bar" style="--height: 30%; height: 30%;" data-value="2676 TV Shows (30%)"></div>
+                    <span>TV Shows</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <section class="sidebar-info">
+                <h3>Top Zemlje Proizvodnje</h3>
+                <div class="pie-chart-container">
+                    <div class="pie-chart"></div>
+                    <ul class="pie-legend">
+                        <li><span class="dot usa"></span> SAD (40%)</li>
+                        <li><span class="dot india"></span> Indija (20%)</li>
+                        <li><span class="dot uk"></span> UK (15%)</li>
+                        <li><span class="dot japan"></span> Japan (15%)</li>
+                        <li><span class="dot ostalo"></span> Ostalo (10%)</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <section class="data-summary">
+            <div class="analysis-flex">
+                <div class="analysis-box">
+                    <h3>Ukupno naslova</h3>
+                    <p>8807</p>
+                </div>
+                <div class="analysis-box">
+                    <h3>Najpopularniji žanr</h3>
+                    <p>Documentary</p>
+                </div>
+                <div class="analysis-box">
+                    <h3>Zadnja godina</h3>
+                    <p>2021</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025. Web Programiranje. Sva prava pridrzana.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,379 @@
+:root {
+    --pozadina: #0b0e14;
+    --sekcija: #161b22;
+    --plava: #00d4ff;
+    --tekst: #f0f6fc;
+}
+
+* { box-sizing: border-box; }
+body {
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    background-color: var(--pozadina);
+    color: var(--tekst);
+}
+
+header {
+    background: #000;
+    padding: 15px 50px;
+    border-bottom: 2px solid var(--plava);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    color: var(--plava); 
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem; 
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+
+.accent {
+    color: var(--plava); 
+    font-size: inherit; 
+}
+
+header h1 small {
+    color: var(--tekst);
+    font-size: 1.2rem; 
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0;
+    margin-left: 10px;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-wrapper {
+    position: relative;
+    padding: 10px 0;
+}
+
+.menu-toggle {
+    display: none !important;
+    visibility: hidden;
+    position: absolute;
+}
+
+.menu-btn {
+    display: block;
+    color: var(--plava);
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.3rem;
+    border: 1px solid var(--plava);
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    background: var(--sekcija);
+    border: 1px solid var(--plava);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.menu-wrapper:hover nav {
+    display: block;
+}
+
+.menu-wrapper:hover .menu-btn {
+    background: var(--plava);
+    color: #000;
+}
+
+nav ul { list-style: none; padding: 0; margin: 0; }
+nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--tekst);
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid #30363d;
+    transition: 0.3s;
+}
+nav ul li a:hover,
+nav ul li a.active {
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--plava);
+}
+
+#main-content {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+    align-items: start;
+    text-align: left;
+}
+
+.table-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    background: var(--sekcija);
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    overflow-x: auto; 
+}
+
+.table-container {
+    flex: 2;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: var(--plava);
+    color: #000;
+    padding: 15px;
+    text-align: left;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #30363d;
+}
+
+tbody tr {
+    transition: background-color 0.3s ease; 
+}
+
+tbody tr:hover {
+    background-color: rgba(0, 212, 255, 0.15); 
+    cursor: pointer; 
+}
+
+tbody tr:hover td {
+    color: #ffffff;
+}
+
+
+@media (max-width: 768px) {
+    .table-wrapper {
+        flex-direction: column; 
+    }
+
+    .side-content {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 0.75rem;
+        font-size: 0.8rem;
+    }
+}
+
+
+/* GRAFOVI */
+.analysis-section {
+    background: var(--sekcija);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    gap: 60px;
+    height: 300px; 
+    margin-top: 50px;
+    border-bottom: 2px solid var(--plava);
+    padding-bottom: 2px;
+}
+
+.bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    height: 100%; 
+    justify-content: flex-end;
+}
+
+.bar {
+    width: 60px;
+    background: var(--plava);
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    transition: 0.3s;
+    animation: growHeight 1.5s ease-out;
+}
+
+.movie-bar { background: var(--plava); }
+.tv-bar { background: #ffffff; }
+
+@keyframes growHeight {
+    from { height: 0; }
+}
+
+.bar:hover::after {
+    content: attr(data-value);
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: var(--plava);
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border: 1px solid var(--plava);
+    white-space: nowrap;
+}
+
+.content-grid {
+    background: var(--sekcija);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.pie-chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    text-align: center;
+    gap: 60px;
+    padding: 20px;
+}
+
+.sidebar-info {
+    text-align: center;
+}
+
+.pie-chart {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 20px auto;
+    background: conic-gradient(
+        #00d4ff 0% 40%,      
+        #ffffff 40% 60%,     
+        #a855f7 60% 75%,     
+        #2ecc71 75% 90%,     
+        #445069 90% 100%    
+    );
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    border: 3px solid var(--sekcija);
+    transition: 0.3s;
+}
+
+.pie-chart:hover{
+    border-color: rgba(14, 74, 202, 0.932);
+    transform: translateY(-5px);
+}
+
+.pie-legend { 
+    list-style: none; 
+    padding: 0; 
+    margin-top: 15px; 
+}
+
+.pie-legend li { 
+    margin-bottom: 8px; 
+    font-size: 0.9rem; 
+    display: flex; 
+    align-items: center; 
+}
+.dot { 
+    width: 12px; 
+    height: 12px; 
+    border-radius: 50%; 
+    margin-right: 10px; 
+}
+.usa { background: #00d4ff; }
+.india { background: #ffffff; }
+.uk { background: #a855f7; }
+.japan { background: #2ecc71; } 
+.ostalo { background: #445069; }
+
+
+.analysis-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.analysis-box {
+    background: var(--sekcija);
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.analysis-box:hover {
+    border-color: var(--plava);
+    transform: translateY(-5px);
+}
+
+.analysis-box p {
+    margin: 10px 0 0;
+    font-size: 2.2rem;
+    font-family: 'Bebas Neue', cursive;
+    color: var(--plava);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 1px solid #30363d;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    .analysis-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .form-flex input, .form-flex button {
+        width: 100%;
+    }
+    .chart-container { gap: 20px; }
+    .content-grid { grid-template-columns: 1fr; }
+    header { padding: 15px 20px; }
+    nav { right: 0; width: 180px; }
+}
