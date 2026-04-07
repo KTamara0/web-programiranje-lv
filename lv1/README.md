@@ -2,7 +2,7 @@
 # LV 1 zadatak - Web stranica na danu temu
 
 ### LINK: (POSTAVITI LINK STRANICE)
-file:///C:/Users/student/Desktop/LV1/LV1/index_predlozak.html
+[file:///C:/Users/student/Desktop/LV1/LV1/index_predlozak.html](https://ktamara0.github.io/web-programiranje-lv/lv1/)
 
 <hr />
 
